@@ -1,0 +1,35 @@
+title: "Example: Login flow"
+project: Example
+summary: Example of user flow.
+version: 0.1.0
+tags:
+  - example
+  - login
+date: 2017-12-24
+authors:
+  - nhamada
+screens:
+  - id: id-0
+    name: Login
+    summary: main screen in login flow
+    components:
+      - type: textfield
+        name: user name
+      - type: textfield
+        name: password
+      - type: button
+        name: login
+      - type: button
+        name: privacy policy
+      - type: button
+        name: remind password
+    flows:
+      - type user name -> type password -> tap login
+      - tap privacy policy -> show screen id-1
+      - tap remind password -> open http://www.example.com/remind
+  - id: id-1
+    name: Privacy Policy
+    summary: Privacy policy
+    components:
+      - type: view
+        name: contents of privacy policy
