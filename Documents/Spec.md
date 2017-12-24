@@ -48,7 +48,7 @@ The following table represents a detail of above keys.
 |:---------|:-----------|:---------|:------------|
 | id       | string     | Yes      | Identifier of a screen |
 | name     | string     | Yes      | Name of a screen |
-| summary  | string  | No       | Summary of a screen |
+| summary  | string     | No       | Summary of a screen |
 | components | sequence of mappings | No | List of components on a screen |
 | flows | sequence of strings | No | List of user flow. |
 
