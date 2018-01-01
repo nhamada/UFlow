@@ -21,4 +21,5 @@ options.inputFiles.forEach {
     doc.screens.forEach {
         print($0)
     }
+    GraphVizPlotter.plot(document: doc, to: options.outputDirectory)
 }

@@ -25,7 +25,7 @@ screens:
         name: remind password
     flows:
       - type user name -> type password -> tap login
-      - tap privacy policy -> show screen id-1
+      - tap privacy policy -> show id-1
       - tap remind password -> open http://www.example.com/remind
   - id: id-1
     name: Privacy Policy
