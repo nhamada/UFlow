@@ -21,5 +21,6 @@ options.inputFiles.forEach {
     doc.screens.forEach {
         print($0)
     }
-    GraphVizPlotter.plot(document: doc, to: options.outputDirectory)
+    let plotter = PlotterBuilder.build(for: .graphviz)
+    plotter.plot(document: doc, to: options.outputDirectory)
 }
