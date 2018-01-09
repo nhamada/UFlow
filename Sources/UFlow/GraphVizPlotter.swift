@@ -6,14 +6,13 @@
 //
 
 import Foundation
-import UFlow
 
 public final class GraphVizPlotter: Plotter {
-    static var fileExtension: String {
+    public static var fileExtension: String {
         return ".dot"
     }
     
-    static func plot(document: Document, to outputDirectory: URL) {
+    public func plot(document: Document, to outputDirectory: URL) {
         let outputFileUrl = outputDirectory.appendingPathComponent(document.documentTitle + GraphVizPlotter.fileExtension)
         
         let contentString = document.fileHeaderString() +

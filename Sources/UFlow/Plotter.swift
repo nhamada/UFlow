@@ -6,14 +6,13 @@
 //
 
 import Foundation
-import UFlow
 
 /**
  * User flow plotter protocol.
  *
  * To draw or render user flow, a class/struct which conforms this protocol is required.
  */
-protocol Plotter {
+public protocol Plotter {
     /**
      * File extension of output user flow.
      */
@@ -26,5 +25,18 @@ protocol Plotter {
      *   - document: User flow to draw/render
      *   - outputDirecotyr: Output directory
      */
-    static func plot(document: Document, to outputDirectory: URL)
+    func plot(document: Document, to outputDirectory: URL)
+}
+
+public enum PlotType {
+    case graphviz
+}
+
+public final class PlotterBuilder {
+    public static func build(for type: PlotType) -> Plotter {
+        switch type {
+        case .graphviz:
+            return GraphVizPlotter()
+        }
+    }
 }
